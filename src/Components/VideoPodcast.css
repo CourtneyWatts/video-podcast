@@ -1,0 +1,29 @@
+.VideoPodcast-header {
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+.PodcastContent {
+  display: flex;
+  justify-content: space-between;
+}
+embed {
+  height: 280px;
+  width: 100%;
+}
+.Loading-screen {
+  text-align: center;
+  margin-top: 100px;
+}
+.error-screen {
+  text-align: center;
+  margin-top: 100px;
+}
+.error-screen p {
+  font-weight: 600;
+  font-size: 22px
+}

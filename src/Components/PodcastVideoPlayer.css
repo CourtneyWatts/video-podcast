@@ -1,0 +1,34 @@
+.PodcastVideo {
+  border: 4px solid transparent;
+  width: 45%;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  border-radius: 0 0 5px 5px;
+}
+.PodcastContent-Video {
+  height: 280px;
+  background-color: black;
+  position: relative;
+}
+.btn i {
+  color: white;
+}
+.highlight-play {
+  animation: highlightPlayButton 2s ease-out;
+  animation-fill-mode: backwards;
+}
+.PodcastContent-Description {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 0 0 5px 5px;
+}
+@keyframes highlightPlayButton {
+  0% {
+    color: #004fffad;
+  }
+  100% {
+    color: white;
+  }
+}
