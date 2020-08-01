@@ -1,3 +1,20 @@
+## Video Podcast App
+
+My Video Podcast app uses the CNN podcast API.
+
+### No mouse navigation. Navigation is done entirely via Arrow Keys.
+
+Switch focus - between the podcast list and the video player using the left and right arrow keys.
+
+Scroll through the podcast list using the up and down arrow keys.
+
+With the video highlighted, Play/Pause the video using the enter key.
+
+
+### Video Playing
+<img src="images/Preview.gif">
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
