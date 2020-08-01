@@ -1,18 +1,19 @@
 .App {
-  margin: 2vh 5vw;
+  margin: 5vh auto;
   font-family: 'lato', sans-serif;
+  max-width: 1280px;
+  padding: 25px;
 }
-.small-screen-text{
+.small-screen-text {
   font-size: 30px;
-
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .VideoPodcast {
     display: none;
   }
 }
-@media (min-width: 768px) {
-  .small-screen-text{
+@media (min-width: 900px) {
+  .small-screen-text {
     display: none;
   }
   .VideoPodcast {

@@ -5,3 +5,13 @@
 .PodcastList-container {
   margin: 20px 0;
 }
+@media (max-width: 1200px) {
+  .PodcastList {
+    width: 45%;
+  }
+}
+@media (max-width: 992px) {
+  .PodcastList {
+    width: 38%;
+  }
+}

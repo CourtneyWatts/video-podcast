@@ -4,9 +4,18 @@ import './VideoPodcast.css'
 import PodcastList from './PodcastList'
 import PodcastVideoPlayer from './PodcastVideoPlayer'
 
+const RIGHT_KEY = 'ArrowRight'
+const LEFT_KEY = 'ArrowLeft'
+const DOWN_KEY = 'ArrowDown'
+const UP_KEY = 'ArrowUp'
+const ENTER_KEY = 'Enter'
+
+
+
+
 export class VideoPodcast extends Component {
   static defaultProps = {
-    podcast: 'http://rss.cnn.com/services/podcasting/stuGHGHdentnews/rss.xml',
+    podcast: 'http://rss.cnn.com/services/podcasting/studentnews/rss.xml',
   }
   constructor(props) {
     super(props)
@@ -61,21 +70,23 @@ export class VideoPodcast extends Component {
     }
   }
   // highlighting selected sides of the app
-  highlightSelection(direction) {
+  highlightSelection(key) {
     let leftSide = document.querySelector('.Video')
     let playButton = document.querySelector('.btn i')
-    if (direction === 'ArrowLeft') {
+    
+    if (key === LEFT_KEY) {
       playButton.classList.remove('highlight-play')
-      leftSide.classList.toggle('selected')
+      leftSide.classList.add('selected')
+      
       // logic created to disable up/down scroll when the focus is not on the list
       if (!this.state.focusedOnList) {
         this.setState({
           focusedOnList: true,
         })
       }
-    } else if (direction === 'ArrowRight') {
+    } else if (key === RIGHT_KEY) {
       leftSide.classList.remove('selected')
-      playButton.classList.toggle('highlight-play')
+      playButton.classList.add('highlight-play')
       // logic created to disable up/down scroll when the focus is not on the list
       if (this.state.focusedOnList) {
         this.setState({
@@ -90,16 +101,17 @@ export class VideoPodcast extends Component {
       let key = event.key
       let { focusedOnList } = this.state
       event.preventDefault()
-      if (key === 'ArrowDown' && focusedOnList) {
+      if (key === DOWN_KEY && focusedOnList) {
         this.navDown()
-      } else if (key === 'ArrowUp' && focusedOnList) {
+      } else if (key === UP_KEY && focusedOnList) {
         this.navUp()
-      } else if (key === 'ArrowLeft' || key === 'ArrowRight') {
+      } else if (key === LEFT_KEY || key === RIGHT_KEY) {
         this.highlightSelection(key)
-      } else if (key === 'Enter') {
+      } else if (key === ENTER_KEY) {
         this.playPauseVideo()
       }
     })
+    
   }
 
   componentDidMount() {
@@ -148,7 +160,7 @@ export class VideoPodcast extends Component {
     if (isLoading) {
       content = (
         <div className='Loading-screen'>
-          <i className='fa-5x far fa-laugh fa-spin'></i>
+          <i className='fa-5x fa fa-spinner fa-spin'></i>
         </div>
       )
     } else if (errorInFetch) {

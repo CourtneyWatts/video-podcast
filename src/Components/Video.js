@@ -7,7 +7,7 @@ function Video(props) {
   let { selected, title, published } = props
   return (
     <Animated animationIn='fadeInUp'>
-      <div className={`Video ${selected ? 'highlighted' : ''}`}>
+      <div className={`Video ${selected ? 'selected' : ''}`}>
         <div className='Video-Information'>
           <CNNLogo />
           <div>
